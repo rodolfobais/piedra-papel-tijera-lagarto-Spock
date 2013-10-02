@@ -6,12 +6,12 @@ import org.junit.Test;
 public class PartidaTests {
 
 	@Test
-	public void queSpockVaporizaPiedra() {
+	public void Spockgana() {
 
 		Mano jugadorUno = new Mano(Forma.SPOCK);
 		Mano jugadorDos = new Mano(Forma.PIEDRA);
 
-		assertEquals("Spock vaporiza piedra",
+		assertEquals("Spock gana",
 				Resultado.GANA, jugadorUno.jugarCon(jugadorDos));
 
 	}
