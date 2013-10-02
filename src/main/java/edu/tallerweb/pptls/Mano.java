@@ -25,9 +25,9 @@ public class Mano {
 	 * @return un Resultado, de acuerdo al estado del juego.
 	 */
 	public Resultado jugarCon(final Mano otra) {
-		if(this.forma.getValor().equals(otra.forma.getValor()))
+		if (this.forma.getValor().equals(otra.forma.getValor()))
 			return Resultado.EMPATA;
-		if(this.venceA.contains(otra.forma.getValor()))
+		if (this.venceA.contains(otra.forma.getValor()))
 			return Resultado.GANA;
 		return Resultado.PIERDE;
 	}
