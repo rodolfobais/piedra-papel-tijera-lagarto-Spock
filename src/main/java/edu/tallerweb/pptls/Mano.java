@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Representa una de las Manos involucradas en el juego
  */
 public class Mano {
+	private final int CantFormas = 5;
 	private final Forma forma;
 	private final ArrayList<Integer> venceA = new ArrayList<Integer>();
 	/**
@@ -14,7 +15,7 @@ public class Mano {
 	 * @param forma, la Forma que adopta la Mano.
 	 */
 	public Mano(final Forma forma) {
-		this.forma=forma;
+		this.forma = forma;
 		this.venceA.add(getAnterior(1));
 		this.venceA.add(getAnterior(2));
 	}
@@ -25,18 +26,20 @@ public class Mano {
 	 * @return un Resultado, de acuerdo al estado del juego.
 	 */
 	public Resultado jugarCon(final Mano otra) {
-		if (this.forma.getValor().equals(otra.forma.getValor()))
+		if (this.forma.getValor().equals(otra.forma.getValor())){
 			return Resultado.EMPATA;
-		if (this.venceA.contains(otra.forma.getValor()))
+		}
+		if (this.venceA.contains(otra.forma.getValor())){
 			return Resultado.GANA;
+		}
 		return Resultado.PIERDE;
 	}
 
-	private Integer getAnterior(int offset){
-		if(this.forma.getValor()-offset<0){
-			return (this.forma.getValor()-offset+5);		
+	private Integer getAnterior(final int offset){
+		if (this.forma.getValor() - offset<0){
+			return (this.forma.getValor() - offset + this.CantFormas);		
 		}
-		return this.forma.getValor()-offset;
+		return this.forma.getValor() - offset;
 	}
 
 }
