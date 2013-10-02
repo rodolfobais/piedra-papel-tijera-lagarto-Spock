@@ -37,7 +37,7 @@ public class Mano {
 
 	private Integer getAnterior(final int offset) {
 		if (this.forma.getValor() - offset < 0) {
-			return (this.forma.getValor() - offset + this.cantFormas);		
+			return (this.forma.getValor() - offset + this.cantFormas);
 		}
 		return this.forma.getValor() - offset;
 	}
